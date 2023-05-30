@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "Jovian Zehnder-Martinez",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "assemblyscript": "^0.27.5",
+    "typescript": "^5.0.4"
+  }
 }
