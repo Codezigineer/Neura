@@ -2,4 +2,4 @@
 set -e
 mkdir build
 asc ./src/*.ts --optimizeLevel 3 -o ./build/neuraFF.wasm
-tsc ./src/js/*.ts --lib dom --outDir ./build 
+tsc ./src/js/*.ts --lib es2017 --outDir ./build 
