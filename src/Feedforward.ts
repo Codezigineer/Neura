@@ -5,7 +5,7 @@ export class Feedforward
     squash: number = 0;
 
     // squash == 0 means sigmoid, 1 means relu, and 2 means tanh. No error functions besides MSE
-    constructor(weights: Float32Array[][] = [], biases: Float32Array[] = [], squash: umber = 0, errorFunc: number = 0)
+    constructor(weights: Float32Array[][] = [], biases: Float32Array[] = [], squash: number = 0, errorFunc: number = 0)
     {
         this.weights = weights;
         this.biases = biases;
