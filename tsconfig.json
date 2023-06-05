@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "outDir": "build",
+        "module": "esnext",
+        "target": "ES2017",
+        "lib": ["dom", "es2017"],
+        "allowJs": false
+    },
+    "include": ["src"],
+}
