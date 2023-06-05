@@ -1,8 +1,8 @@
 {
-  "name": "neura.as",
-  "version": "1.0.1",
-  "description": "A fast WebAssembly-based neural network library for the web",
-  "main": "./src/js/neura.ts",
+  "name": "neurajs",
+  "version": "1.0.0",
+  "description": "A neural network library for the web",
+  "main": "./src/Feedforward.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
