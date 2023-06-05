@@ -1,5 +1,5 @@
 <h1 style="text-align: center;">Neura</h1>
-<p style="text-align: center;">A fast WebAssembly-based neural network library for the web.</p>
+<p style="text-align: center;">A neural network library for the web.</p>
 
 <h1 style="text-align: center;">Contribute</h1>
 <p style="text-align: center;">Contibute as much as you want, it helps everyone working on this library, and everybody using this library.</p>
