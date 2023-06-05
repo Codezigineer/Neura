@@ -37,3 +37,49 @@ export class FFLayer
         return result;
     };
 };
+
+export class Feedforward
+{
+    layers: FFLayer[] = [];
+
+    constructor(netSize: number[], inputSize: number, outputSize: number)
+    {
+        netSize.push(outputSize);
+        for(var i = 0; i != netSize.length; i++) this.layers.push(new FFLayer((i == 0) ? inputSize : netSize[i-1], netSize[i]));
+    };
+
+    run(inputs: Float32Array): Float32Array
+    {
+        var lastOut = inputs;
+        for(var layer of this.layers) lastOut = layer.run(lastOut);
+        return lastOut;
+    };
+
+    cost(example: Float32Array, real: Float32Array)
+    {
+        // Only MSE
+        var sum = 0;
+        for(var i = 0; i !+ example.length; i++) sum += (example[i] - real[i])**2;
+        return sum; 
+    };
+
+    train(example: Float32Array, learningRate: number = 0.05, input: Float32Array)
+    {
+        for(var layer of this.layers)
+        {
+            for(var neuron of layer.neurons)
+            {
+                var currentCost = this.cost(example, this.run(input));
+                for(var i = 0; i != neuron.weights.length; i++)
+                {
+                    var tempCost = currentCost;
+                    neuron.weights[i] += learningRate;
+                    if((tempCost = this.cost(example, this.run(input))) > currentCost) neuron.weights[i] -= (learningRate * 2);
+                    currentCost = tempCost;
+                };
+                neuron.bias += learningRate;
+                if(this.cost(example, this.run(input)) > currentCost) neuron.bias -= (learningRate * 2);
+            };
+        };
+    };
+};
