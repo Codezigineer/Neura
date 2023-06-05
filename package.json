@@ -1,5 +1,5 @@
 {
-  "name": "neurajs",
+  "name": "neura_ai",
   "version": "1.0.0",
   "description": "A neural network library for the web",
   "main": "./src/Feedforward.ts",
